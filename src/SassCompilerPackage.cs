@@ -8,6 +8,7 @@ using Task = System.Threading.Tasks.Task;
 
 namespace SassCompiler
 {
+    [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
 	[PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
 	[Guid(PackageGuids.guidSassCompilerPackageString)]
     [ProvideCodeGenerator(typeof(SassTranspiler), SassTranspiler.Name, SassTranspiler.Description, true, RegisterCodeBase = true)]

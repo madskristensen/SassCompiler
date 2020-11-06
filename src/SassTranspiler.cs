@@ -1,7 +1,7 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using Microsoft.VisualStudio.TextTemplating.VSHost;
 using NUglify;
-using NUglify.Css;
 using SharpScss;
 
 namespace SassCompiler
@@ -11,12 +11,14 @@ namespace SassCompiler
         public const string Name = nameof(SassTranspiler);
         public const string Description = "Transpiles Sass/Scss files to CSS";
 
-        public override string GetDefaultExtension()
-        => ".css";
+        public override string GetDefaultExtension() => ".css";
 
         protected override byte[] GenerateCode(string inputFileName, string inputFileContent)
         {
-            ScssResult result = Scss.ConvertFileToCss(inputFileName);
+            var options = new ScssOptions();
+            //options.IncludePaths.Add(Path.GetDirectoryName(InputFilePath));
+
+            ScssResult result = Scss.ConvertFileToCss(inputFileName, options);
             UglifyResult minified = Uglify.Css(result.Css);
 
             return Encoding.UTF8.GetBytes(minified.Code);

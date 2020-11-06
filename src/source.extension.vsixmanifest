@@ -3,7 +3,8 @@
     <Metadata>
         <Identity Id="SassCompiler.51aaf69f-7f00-426c-a697-64a2b5acabc3" Version="1.0" Language="en-US" Publisher="Mads Kristensen" />
         <DisplayName>Sass Compiler</DisplayName>
-        <Description xml:space="preserve">Transpiles Sass/Scss files to CSS every time you save the file</Description>
+        <Description xml:space="preserve">Transpiles Sass/Scss files to CSS and minifies it instantly - every time you save the file</Description>
+        <MoreInfo>https://github.com/madskristensen/SassCompiler</MoreInfo>
         <License>Resources\LICENSE</License>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
