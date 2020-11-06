@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+
+  <Commands package="guidSassCompilerPackage">
+    <Groups>
+      <Group guid="guidSassCompilerPackageCmdSet" id="MyMenuGroup" priority="0x0100">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidSassCompilerPackageCmdSet" id="CustomToolCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidSassCompilerPackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="SASSStyleSheet" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Transpile into CSS</ButtonText>
+          <LocCanonicalName>.SassTranspiler.TranspileFile</LocCanonicalName>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <KeyBindings>
+    <KeyBinding guid="guidSassCompilerPackageCmdSet" id="CustomToolCommandId" editor="guidVSStd97" key1="9" mod1="Control Shift" />
+  </KeyBindings>
+
+  <VisibilityConstraints>
+    <VisibilityItem guid="guidSassCompilerPackageCmdSet" id="CustomToolCommandId" context="guidSassUIRule" />
+  </VisibilityConstraints>
+
+  <Symbols>
+    <GuidSymbol name="guidSassCompilerPackage" value="{364bd1cf-2c06-490d-8aa4-b50163e28d3c}" />
+    <GuidSymbol name="guidSassUIRule" value="{e123a225-e3c4-4a68-b7a2-58dc52a4f709}" />
+
+    <GuidSymbol name="guidSassCompilerPackageCmdSet" value="{be6ceda4-9855-4f0f-99c8-fcc5bfa83b6c}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="CustomToolCommandId" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
