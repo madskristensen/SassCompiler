@@ -11,6 +11,8 @@ namespace SassCompiler
     [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
 	[PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
 	[Guid(PackageGuids.guidSassCompilerPackageString)]
+    [ProvideOptionPage(typeof(DialogPageProvider.General), "Extensions", Vsix.Name, 0, 0, true, 0, ProvidesLocalizedCategoryName = false)]
+    [ProvideProfile(typeof(DialogPageProvider.General), "Extensions", Vsix.Name, 0, 0, true)]
     [ProvideCodeGenerator(typeof(SassTranspiler), SassTranspiler.Name, SassTranspiler.Description, true, RegisterCodeBase = true)]
     //[ProvideCodeGeneratorExtension(SassTranspiler.Name, ".scss")]
     //[ProvideCodeGeneratorExtension(SassTranspiler.Name, ".sass")]

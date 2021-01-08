@@ -11,7 +11,7 @@ namespace SassCompiler
         public const string Name = "Sass Compiler";
         public const string Description = @"Transpiles Sass/Scss files to CSS and minifies it instantly - every time you save the file";
         public const string Language = "en-US";
-        public const string Version = "1.0";
+        public const string Version = "1.0.1";
         public const string Author = "Mads Kristensen";
         public const string Tags = "";
     }

@@ -1,5 +1,4 @@
-﻿using System.IO;
-using System.Text;
+﻿using System.Text;
 using Microsoft.VisualStudio.TextTemplating.VSHost;
 using NUglify;
 using SharpScss;
@@ -16,7 +15,6 @@ namespace SassCompiler
         protected override byte[] GenerateCode(string inputFileName, string inputFileContent)
         {
             var options = new ScssOptions();
-            //options.IncludePaths.Add(Path.GetDirectoryName(InputFilePath));
 
             ScssResult result = Scss.ConvertFileToCss(inputFileName, options);
             UglifyResult minified = Uglify.Css(result.Css);
